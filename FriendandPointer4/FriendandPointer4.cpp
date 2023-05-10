@@ -2,10 +2,28 @@
 //
 
 #include <iostream>
+#include <string>
+using namespace std;
+
+class mahasiswa {
+private:
+    string nama;
+public:
+    friend void setNama(mahasiswa& a, string);
+};
+
+void setNama(mahasiswa& a, string pNama) {
+    a.nama = pNama;
+    cout << "Nama: " << a.nama;
+}
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    mahasiswa mhs;
+    setNama(mhs, "Joko Kumat");
+    cout << endl;
+    system("pause");
+    return 0;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
